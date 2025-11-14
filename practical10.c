@@ -2,34 +2,57 @@
 #include <string.h>
 #include <math.h>
 
-void sortStrings(char arr[][50], int n) {
+// Simple function to sort strings by length
+void sortStrings(char words[][50], int n) {
+
     char temp[50];
-    for (int i = 0; i < n - 1; i++)
-        for (int j = i + 1; j < n; j++)
-            if (strlen(arr[i]) > strlen(arr[j])) {
-                strcpy(temp, arr[i]);
-                strcpy(arr[i], arr[j]);
-                strcpy(arr[j], temp);
+
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+
+            // If first string is longer, swap
+            if (strlen(words[i]) > strlen(words[j])) {
+
+                strcpy(temp, words[i]);
+                strcpy(words[i], words[j]);
+                strcpy(words[j], temp);
             }
+        }
+    }
 }
 
 int main() {
+
     int n;
-    printf("Enter number of strings: ");
+    printf("How many strings? ");
     scanf("%d", &n);
-    char arr[n][50];
+
+    char words[n][50];
+
+    // Input strings
     for (int i = 0; i < n; i++) {
         printf("Enter string %d: ", i + 1);
-        scanf("%s", arr[i]);
+        scanf("%s", words[i]);
     }
-    sortStrings(arr, n);
-    printf("\nStrings sorted by length:\n");
-    for (int i = 0; i < n; i++) printf("%s\n", arr[i]);
 
-    float r, *p = &r;
+    // Sort function call
+    sortStrings(words, n);
+
+    // Print sorted strings
+    printf("\nStrings sorted by length:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%s\n", words[i]);
+    }
+
+    // POINTER + AREA EXAMPLE
+    float r;      
+    float *p = &r; // Pointer storing address of r
+
     printf("\nEnter radius: ");
     scanf("%f", &r);
+
     printf("Area = %.2f\n", M_PI * (*p) * (*p));
     printf("Circumference = %.2f\n", 2 * M_PI * (*p));
+
     return 0;
 }
