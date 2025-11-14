@@ -2,20 +2,32 @@
 #include <string.h>
 
 int main() {
-    char str1[50], str2[50];
+
+    char s1[50], s2[50];
+
+    // ---- INPUT ----
     printf("Enter first string: ");
-    gets(str1);
+    fgets(s1, sizeof(s1), stdin);
+
     printf("Enter second string: ");
-    gets(str2);
+    fgets(s2, sizeof(s2), stdin);
 
-    printf("Concatenation: %s\n", strcat(str1, str2));
+    // Remove newline (fgets stores '\n')
+    s1[strcspn(s1, "\n")] = '\0';
+    s2[strcspn(s2, "\n")] = '\0';
 
-    strcpy(str1, "Hello");
-    strcpy(str2, "World");
-    printf("Copy Example: %s\n", strcpy(str1, str2));
+    // ---- CONCATENATION ----
+    printf("\nConcatenation: %s\n", strcat(s1, s2));
 
-    printf("Compare: %d\n", strcmp("apple", "banana"));
+    // ---- COPY EXAMPLE ----
+    char a[50], b[50];
+    strcpy(a, "Hello");
+    strcpy(b, "World");
+
+    printf("Copy Example: %s\n", strcpy(a, b));
+
+    // ---- COMPARE ----
+    printf("Compare (apple vs banana): %d\n", strcmp("apple", "banana"));
 
     return 0;
 }
-
