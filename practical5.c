@@ -1,3 +1,5 @@
+//Atharva Balpande - 25070521117
+
 #include <stdio.h>
 
 int str_len(char s[]) {
@@ -33,3 +35,4 @@ int main() {
     printf("Comparison result: %d\n", str_cmp(a, b));
     return 0;
 }
+
