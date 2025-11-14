@@ -1,23 +1,31 @@
 #include <stdio.h>
 
 int main() {
-    int a = 10, b = 5;
 
-    // Arithmetic operators
+    int a, b;
+
+    // Taking input from user
+    printf("Enter value of a: ");
+    scanf("%d", &a);
+
+    printf("Enter value of b: ");
+    scanf("%d", &b);
+
+    // Arithmetic Operators
     printf("a + b = %d\n", a + b);
     printf("a - b = %d\n", a - b);
     printf("a * b = %d\n", a * b);
     printf("a / b = %d\n", a / b);
 
-    // Relational operator example
-    printf("Is a greater than b? %d\n", a > b);
+    // Relational Operator
+    printf("a > b = %d\n", a > b);
 
-    // Logical operator example
-    printf("Logical AND (1 && 0): %d\n", 1 && 0);
+    // Logical Operator
+    printf("Logical AND (a>0 && b>0) = %d\n", (a > 0) && (b > 0));
 
-    // Ternary operator
-    int big = (a > b) ? a : b;
-    printf("Bigger number is %d\n", big);
+    // Ternary Operator
+    int bigger = (a > b) ? a : b;
+    printf("Bigger number = %d\n", bigger);
 
     return 0;
 }
