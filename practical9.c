@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>   // required for strcpy()
 
 union Data {
     int i;
@@ -8,12 +9,18 @@ union Data {
 
 int main() {
     union Data data;
-    data.i = 10;
+
+    data.i = 10;  
     printf("Integer: %d\n", data.i);
-    data.f = 3.14;
+
+    data.f = 3.14;  
     printf("Float: %.2f\n", data.f);
-    strcpy(data.str, "Hello");
+
+    strcpy(data.str, "Hello");  
     printf("String: %s\n", data.str);
-    // Note: All share same memory
+
+    // Note: All members share the same memory
     return 0;
 }
+
+
