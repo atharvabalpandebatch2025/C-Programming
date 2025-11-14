@@ -1,3 +1,5 @@
+//Atharva Balpande - 25070521117
+
 #include <stdio.h>
 #include <string.h>   // required for strcpy()
 
@@ -22,5 +24,6 @@ int main() {
     // Note: All members share the same memory
     return 0;
 }
+
 
 
