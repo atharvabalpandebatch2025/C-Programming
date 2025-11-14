@@ -2,36 +2,22 @@
 
 int main() {
     int a = 10, b = 5;
-    int result;
-    int x = 1, y = 0;
 
-    // ----- Arithmetic Operators -----
-    printf("=== Arithmetic Operators ===\n");
+    // Arithmetic operators
     printf("a + b = %d\n", a + b);
     printf("a - b = %d\n", a - b);
     printf("a * b = %d\n", a * b);
     printf("a / b = %d\n", a / b);
-    printf("a %% b = %d\n", a % b); // %% prints '%'
 
-    // ----- Relational Operators -----
-    printf("\n=== Relational Operators ===\n");
-    printf("a == b : %d\n", a == b);
-    printf("a != b : %d\n", a != b);
-    printf("a > b  : %d\n", a > b);
-    printf("a < b  : %d\n", a < b);
-    printf("a >= b : %d\n", a >= b);
-    printf("a <= b : %d\n", a <= b);
+    // Relational operator example
+    printf("Is a greater than b? %d\n", a > b);
 
-    // ----- Logical Operators -----
-    printf("\n=== Logical Operators ===\n");
-    printf("x && y = %d\n", x && y);  // Logical AND
-    printf("x || y = %d\n", x || y);  // Logical OR
-    printf("!x = %d\n", !x);          // Logical NOT
+    // Logical operator example
+    printf("Logical AND (1 && 0): %d\n", 1 && 0);
 
-    // ----- Conditional (Ternary) Operator -----
-    printf("\n=== Conditional (Ternary) Operator ===\n");
-    result = (a > b) ? a : b;
-    printf("Greater number between a and b is: %d\n", result);
+    // Ternary operator
+    int big = (a > b) ? a : b;
+    printf("Bigger number is %d\n", big);
 
     return 0;
 }
